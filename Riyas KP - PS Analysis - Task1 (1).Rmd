@@ -313,4 +313,4 @@ __Reflection__
 I have created this markdown dcoument in R language inside RStudio. I have used ggplot to create different types of plots and visualization, i found it simple and efficient using ggplot rather than the defualt R syntax.
 
 Since i have been learnig R for sometime, this is my very first interaction with a live project.
-Thank you for showing interest and sharing the information.
+Thank you for showing interest.
