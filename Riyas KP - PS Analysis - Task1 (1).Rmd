@@ -8,7 +8,7 @@ output:
   word_document: default
 ---
 
-### __Problem Statement__ 
+### __Introduction to Problem Statement__ 
 
 You work for a __consumer finance company__ which specializes in lending various types of loans to urban customers. When the company receives a loan application, the company has to make a decision for loan approval based on the applicant’s profile. __Two types__ of risks are associated with the bank’s decision:
 
@@ -48,9 +48,7 @@ In other words, the company wants to understand the __driving factors (or driver
 __Browsing through the Data:__
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, packages}
-# Load all of the packages that you end up using in your analysis in this code
-# chunk.
-
+# Load all of the packages that you end up using in your analysis in this code. 
 # Notice that the parameter "echo" was set to FALSE for this code chunk. This
 # prevents the code from displaying in the knitted HTML output. You should set
 # echo=FALSE for all code chunks in your file, unless it makes sense for your
@@ -68,7 +66,7 @@ theme_set(theme_minimal(12))
 loan <- read.csv('loan.csv')
 ```
 
-This data set contains 39,717 loans with 111 variables on each loan.
+This data set contains 39,717 loan information with 111 variables on each loan.
 
 ```{r echo=FALSE, dimention_of_the_data}
 #checking how many varibles and the total number of observation are recorded for each variable
@@ -342,19 +340,11 @@ ggplot(aes(x = loan_amnt, y = dti), data = loan) +
 
 The above plot is giving us a weak spread out picture of observations, it is a reflection of how inappropiate and high debt to income ration was when we comapare it to the loan amount had taken by the borrower.
 
-End.
+                                                                            End
 
 __Reflection__
 
-I have created this markdown in R language inside RStudio. I have used ggplot to create different types of plots and visualization, i found it simple and efficient using ggplot rather than the defualt R syntax.
+I have created this markdown dcoument in R language inside RStudio. I have used ggplot to create different types of plots and visualization, i found it simple and efficient using ggplot rather than the defualt R syntax.
 
-Since i have been learnig R for sometime, this is very first interaction with a live project.
+Since i have been learnig R for sometime, this is my very first interaction with a live project.
 Thank you for showing interest and sharing the information.
-
-Please find the below session info.
-
-```{r echo = FALSE}
-sessionInfo()
-```
-
-
