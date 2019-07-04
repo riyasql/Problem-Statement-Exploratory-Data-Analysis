@@ -32,3 +32,8 @@ Like most other lending companies, lending loans to ‘risky’ applicants is th
 If one is able to identify these risky loan applicants, then such loans can be reduced thereby cutting down the amount of credit loss. Identification of such applicants using EDA is the aim of this case study.
 
 In other words, the company wants to understand the __driving factors (or driver variables)__ behind loan default, i.e. the variables which are strong indicators of default. The company can utilize this knowledge for its portfolio and risk assessment.
+### __Results Expected__
+1. Write all your code in one well-commented R file; briefly mention the insights and observations from the analysis.
+2. Explain the results of univariate, bivariate analysis etc. in business terms.
+3. Include visualizations and summarize the most important results.
+4. Form narrative questions from the dataset? Try to answer those questions with supportive visualizations?
