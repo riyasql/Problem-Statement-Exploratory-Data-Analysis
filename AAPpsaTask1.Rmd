@@ -16,10 +16,7 @@ __Browsing through the Data:__
 ```{r echo=FALSE, message=FALSE, warning=FALSE, packages}
 # Load all of the packages that you end up using in your analysis in this code. 
 # Notice that the parameter "echo" was set to FALSE for this code chunk. This
-# prevents the code from displaying in the knitted HTML output. You should set
-# echo=FALSE for all code chunks in your file, unless it makes sense for your
-# report to show the code that generated a particular plot.
-
+# prevents the code from displaying in the knitted HTML output. 
 # The other parameters for "message" and "warning" should also be set to FALSE
 # for other code chunks once you have verified that each plot comes out as you
 # want it to. This will clean up the flow of your report.
@@ -48,19 +45,21 @@ names(loan)
 
 Lets have a look at the structure of the dataset:
 
-We can see that there are both quatitative and categorical variables, quantitaive variales are numerical numbers and Factor is a categorical varible, right next to the Factor you can identify how many categorical levels are there in the specified vatiable.
+We can see that there are both quatitative and categorical variables, quantitaive variales 
+are numerical numbers and Factor is a categorical varible, right next to the Factor you can 
+identify how many categorical levels are there in the specified vatiable.
 
 ```{r echo= FALSE, structure_of_the_data}
 #to check the type of observation stored in a varible
 str(loan)
 ```
 
-Considering the below table of application_type varibale, We can identify that there are 39717 inidvidual applications.
+Considering the below table of application_type varibale, We can identify that there are 
+39717 inidvidual applications.
 
 ```{r echo= FALSE, type_of_application}
 #this code will group the number of different observation for the variable application_type
 table(loan$application_type)
-
 ```
 
 ### __Univariate Analysis__
@@ -85,7 +84,8 @@ ggplot(aes(x= term), data= loan) +
   ylab('Proportion of users')
 ```
 
-From the above observations we can clearly understand that the most of the borrowed amount is near to $10,000. And most chosen number of payment is 36 months which is three years.
+From the above observations we can clearly understand that the most of the borrowed amount
+is near to $10,000. And most chosen number of payment is 36 months which is three years.
 
 Lets have a look into the status of home ownership:
 
@@ -97,7 +97,8 @@ ggplot(aes(x= home_ownership), data= loan) +
   ylab('Proportion of users')
 ```
 
-From the above plot we understood that most of the people are renting the their property and ther is also much similar number of people who are on a mortgage. 
+From the above plot we understood that most of the people are renting the their property 
+and ther is also much similar number of people who are on a mortgage. 
 
 
 Below plot will show when does a person get a loan in terms of the length of their working status.
@@ -117,8 +118,14 @@ Tabel below is showing the grouped summary of the employment length.
 table(loan$emp_length)
 ```
 
-In the above observations we can make out that there are 1075 loans with no recorded employment status, these number shows us that either 1075 number of people are unemployed or we have missed the information of theire status of employment. This plot also shows that a good number of people with more than ten years of employment are taking loans, which is almost a 23%. And 12% of people who took loans are less than a year employed. During First year and fifth year we see almost similar number of loans. Second year we have almost similar number of loans compare to the less than a year employed people. from the third year onwards we see a decreasing trend till nineth year.
-
+In the above observations we can make out that there are 1075 loans with no recorded 
+employment status, these number shows us that either 1075 number of people are unemployed
+or we have missed the information of theire status of employment. This plot also shows 
+that a good number of people with more than ten years of employment are taking loans, 
+which is almost a 23%. And 12% of people who took loans are less than a year employed. 
+During First year and fifth year we see almost similar number of loans. Second year 
+we have almost similar number of loans compare to the less than a year employed people. 
+from the third year onwards we see a decreasing trend till nineth year.
 
 Lets have a look at the annual income of the borrowers:
 
@@ -130,7 +137,6 @@ ggplot(aes(x= annual_inc), data = loan) +
   scale_x_log10() +
   xlab('Self reported annual income in log10') +
   ylab('Proportion of users')
-  
 ```
 
 Below is the summary of the annual income provided by the borrower.
@@ -140,7 +146,8 @@ Below is the summary of the annual income provided by the borrower.
 summary(loan$annual_inc)
 ```
 
-The income of most borrowers range from $40,000 to $82,000, the highest recorded income is $6,000,000.
+The income of most borrowers range from $40,000 to $82,000, the highest recorded income
+is $6,000,000.
 
 
 The below plot will give us a picture of the current staus of the loan:
@@ -151,7 +158,6 @@ ggplot(aes(x= loan_status), data = loan) +
   geom_histogram(stat = "count", color = 'black', fill = '#FFB6C1') +
   xlab('Current status of the loan') +
   ylab('Proportion of users')
-
 ```
 
 Grouped loan status table.
@@ -161,7 +167,8 @@ Grouped loan status table.
 table(loan$loan_status)
 ```
 
-From the above observation we can make out that there are 5627 loans which had been defaulted. Which is a 14% of total number of loan given.
+From the above observation we can make out that there are 5627 loans which had been defaulted. 
+Which is a 14% of total number of loan given.
 
 Lets see for what purpose people borrow money for:
 
@@ -180,8 +187,15 @@ Below table give us the exact number of different loan purpose.
 summary(loan$purpose)
 ```
 
-Majority of the people got the loan for debt consolidation. Credit card is also an important purpose of the loan. Another thing I found is about somewhat similar amount of people got loans for home improvement and major purchase. One interesting thing i found that few number of people are taking loan for renewable energy. This is a good sign that people are thinking about the climate change and they are acting. We need to have a deeper understanding of this and need to think about how can we encourage more people apply for taking loan for renewable energy. May be we need to consider some special interest rates for this in the future. And a good portion of the people didnt mentioned the specific purpose of the loan.
-
+Majority of the people got the loan for debt consolidation. Credit card is also an 
+important purpose of the loan. Another thing I found is about somewhat similar amount 
+of people got loans for home improvement and major purchase. One interesting thing i 
+found that few number of people are taking loan for renewable energy. This is a good 
+sign that people are thinking about the climate change and they are acting. We need 
+to have a deeper understanding of this and need to think about how can we encourage 
+more people apply for taking loan for renewable energy. May be we need to consider s
+ome special interest rates for this in the future. And a good portion of the people 
+didnt mentioned the specific purpose of the loan.
 
 Lets have a look into the Debt to income ratio of borrowers:
 
@@ -192,19 +206,20 @@ ggplot(aes(x=dti), data = loan) +
   scale_x_continuous(breaks = seq(1,32,1)) +
   xlab('Debt to income ratio') +
   ylab('Proportion of users')
-
 ```
 
 Inorder to find out how many people are having dti <1, we will use below quantile function. 
-
 
 ```{r echo =  FALSE}
 #quantile produces sample quantiles corresponding to the given probabilities
 quantile(loan$dti,0.99)
 ```
 
-After limiting the ratio to <1, we can understand that only 29% has debt to income ratio less than 1. And if we call the function quantile(loan$dti, 0.99, na.rm=T), it tells us that almost 75% of the borrowers has their dti > 1. Which is dnagerously high. Evidence from studies of loans suggest that borrowers with a higher debt to income ratio are more likely to run into trouble making monthly payments.
-
+After limiting the ratio to <1, we can understand that only 29% has debt to income 
+ratio less than 1. And if we call the function quantile(loan$dti, 0.99, na.rm=T), 
+it tells us that almost 75% of the borrowers has their dti > 1. Which is dnagerously high.
+Evidence from studies of loans suggest that borrowers with a higher debt to income ratio 
+are more likely to run into trouble making monthly payments.
 
 Income Verification:
 
@@ -220,7 +235,8 @@ ggplot(aes(x= verification_status), data = loan) +
 table(loan$verification_status)
 ```
 
-From the above plot we can understand that half of the loan was allowed wihout any verification. Approving a loan without verifing documents and backgroudnd is also a cause to default.
+From the above plot we can understand that half of the loan was allowed wihout any
+verification. Approving a loan without verifing documents and backgroudnd is also a cause to default.
 
 ### __Bi-Variate Anlysis__
 
@@ -236,8 +252,9 @@ ggplot(aes(x = annual_inc, y = installment), data = loan) +
   ylab('Monthly payment owed by the borrower')
 ```
 
-From the above plot we can identify a  positive moderate upward curve from the obervations. It shows us the streangth and direction of  the varibles. If we verify annual income of all the borrowers, we dont have to do anything new with the monthly payment calculation for each loan.
-
+From the above plot we can identify a  positive moderate upward curve from the obervations. 
+It shows us the streangth and direction of  the varibles. If we verify annual income of all 
+the borrowers, we dont have to do anything new with the monthly payment calculation for each loan.
 
 Loan amount and debt to income ratio plot:
 
@@ -249,7 +266,9 @@ ggplot(aes(x = loan_amnt, y = dti), data = loan) +
   ylab('Debt to income ratio')
 ```
 
-The above plot is giving us a weak spread out picture of observations, it shows us how inappropiate and high debt to income ratio was when we comapare it to the loan amount had taken by the borrower.
+The above plot is giving us a weak spread out picture of observations, it shows us how 
+inappropiate and high debt to income ratio was when we comapare it to the loan amount 
+had taken by the borrower.
 
 ```{r echo= FALSE, loan&income_scatterplot}
 ggplot(aes(x = loan_amnt, y = annual_inc), data = loan) +
@@ -259,7 +278,11 @@ ggplot(aes(x = loan_amnt, y = annual_inc), data = loan) +
   ylab('Annual income of the borrower')
 ```
 
-The above plot is reflecting that the points are spreaded in a slight moderate positive upward direction. which showing us that the people having higher annual income takes highest loan amount. The higher number of loans are from people who are having an annual income of $10,0000 and less, which indicates the wide spread dark concentrated points in the plot. Vertical bar shows us that most people takes a rounded figure like, $10k, $15k, $20k and so on.
+The above plot is reflecting that the points are spreaded in a slight moderate positive u
+pward direction. which showing us that the people having higher annual income takes highest 
+loan amount. The higher number of loans are from people who are having an annual income of 
+$10,0000 and less, which indicates the wide spread dark concentrated points in the plot. 
+Vertical bar shows us that most people takes a rounded figure like, $10k, $15k, $20k and so on.
 
 
 ### __Final Plots and Summary__
@@ -274,8 +297,9 @@ ggplot(aes(x= verification_status), data = loan) +
   ylab('Proportion of users')
 ```
 
-Verfication is a keyfactor, and income verification has to be done in a way that there is no forgery involved. If the annual incomes of all the borrowers are verified then only we will be able to get a proper debt to income ratio.  
-
+Verfication is a keyfactor, and income verification has to be done in a way that there is no 
+forgery involved. If the annual incomes of all the borrowers are verified then only we will 
+be able to get a proper debt to income ratio.  
 
 2. __Debt to income ratio:__
 
@@ -286,13 +310,20 @@ ggplot(aes(x=dti), data = loan) +
   scale_x_continuous(breaks = seq(1,32,1)) +
   xlab('Debt to income ratio') +
   ylab('Proportion of users')
-
 ```
 
-Debt to income ratio is the monthly debt payments divided by gross monthly income. This number is one way lenders measure borrowers ability to manage the payments they make every month to repay the money borrowed. 
+Debt to income ratio is the monthly debt payments divided by gross monthly income. 
+This number is one way lenders measure borrowers ability to manage the payments they 
+make every month to repay the money borrowed. 
 
-We understood that only 26% has debt to income ratio less than 1. It shows us that almost 75% of the borrowers has their dti > 1. Which is dnagerously high. Evidence from studies of loans suggest that borrowers with a higher debt to income ratio are more likely to run into trouble in making monthly payments.Higher risk is usually associated with higher monthly payment. And borrowers must keep their debt to income ratio low. Paying a huge amount of money from monthly salary in every month for a period of 3 years is not possible, of course you have other things to do in daily life, you need money for that also.
-
+We understood that only 26% has debt to income ratio less than 1. It shows us that 
+almost 75% of the borrowers has their dti > 1. Which is dnagerously high. Evidence 
+from studies of loans suggest that borrowers with a higher debt to income ratio are 
+more likely to run into trouble in making monthly payments.Higher risk is usually 
+associated with higher monthly payment. And borrowers must keep their debt to income 
+ratio low. Paying a huge amount of money from monthly salary in every month for a 
+period of 3 years is not possible, of course you have other things to do in daily life, 
+you need money for that also.
 
 3. __Loan amount and debt to income ratio plot:__
 
@@ -304,13 +335,14 @@ ggplot(aes(x = loan_amnt, y = dti), data = loan) +
   ylab('Debt to income ratio')
 ```
 
-The above plot is giving us a weak spread out picture of observations, it is a reflection of how inappropiate and high debt to income ration was when we comapare it to the loan amount had taken by the borrower.
-
-                                                                            End
+The above plot is giving us a weak spread out picture of observations, it is a reflection 
+of how inappropiate and high debt to income ration was when we comapare it to the loan 
+amount had taken by the borrower.
+                                                                           End
 
 __Reflection__
 
 I have created this markdown dcoument in R language inside RStudio. I have used ggplot to create different types of plots and visualization, i found it simple and efficient using ggplot rather than the defualt R syntax.
 
 Since i have been learnig R for sometime, this is my very first interaction with a live project.
-Thank you for showing interest.
+Thank you for visiting.
